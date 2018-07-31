@@ -87,8 +87,8 @@ WinLevel.prototype.draw = function () {
 // anything from this function!
 WinLevel.prototype.update = function () {
 
-    if (gEngine.Input.isKeyClicked(gEngine.Input.keys.L)) {
-        gEngine.GameLoop.stop();
-    }
+    // if (gEngine.Input.isKeyClicked(gEngine.Input.keys.L)) {
+    //     gEngine.GameLoop.stop();
+    // }
     
 };
