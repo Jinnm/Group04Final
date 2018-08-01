@@ -47,7 +47,7 @@ Level4.prototype.unloadScene = function () {
         var nextLevel = new WinLevel(this.win);  // load the next level
         gEngine.Core.startScene(nextLevel);
     }else if(isWin === false) {
-        var nextLevel = new Level4();  // load the next level
+        var nextLevel = new LoseLevel(4);  // load the next level
         gEngine.Core.startScene(nextLevel);
     }
 //    if(error>=6)
@@ -181,12 +181,17 @@ Level4.prototype.update = function () {
     counttime++;
     if(counttime%60 === 0){time=time-1;}; 
     if(time<0){
-        time = 35;
-        this.mTimer.setZero();
+       /* time = 35;
+        //this.mTimer.setZero();
         count = 0;
         msg="";
         this.mMsg1.setText(wordarr[count]);
-        this.mMsg2.setText(wordarr[count+1]);
+        this.mMsg2.setText(wordarr[count+1]);*/
+                    msg = "";
+            count = 0;
+            time=35;
+            isWin = false;
+            gEngine.GameLoop.stop();
     }
 
     if(time<10){this.mMsgtime.setText("00:0"+time);}
