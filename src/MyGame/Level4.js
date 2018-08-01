@@ -252,7 +252,7 @@ Level4.prototype.update = function () {
                 flag=true;
             }
         }
-        else if(error<=5)
+        else
         {
             error=error+1;
             msg = "";

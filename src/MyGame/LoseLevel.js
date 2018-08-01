@@ -17,7 +17,8 @@ offset = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var nextL = 0;
 
 function LoseLevel(num) {
-    this.kBg = "assets/Ending3.png";
+    
+    this.kBg = "assets/gameover-01.png";
     
     // The camera to view the scene
     this.mCamera = null;
@@ -52,6 +53,7 @@ LoseLevel.prototype.unloadScene = function () {
     }else if(this.nextL === 4) {
         var nextLevel = new Level4();  // next level to be loaded
         gEngine.Core.startScene(nextLevel);
+    }
 };
 
 LoseLevel.prototype.initialize = function () {
