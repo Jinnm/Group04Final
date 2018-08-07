@@ -44,7 +44,7 @@ Level4.prototype.unloadScene = function () {
     gEngine.Textures.unloadTexture(this.win);
     
     if(isWin === true) {
-        var nextLevel = new WinLevel(this.win);  // load the next level
+        var nextLevel = new WinLevel();  // load the next level
         gEngine.Core.startScene(nextLevel);
     }else if(isWin === false) {
         var nextLevel = new LoseLevel(4);  // load the next level
