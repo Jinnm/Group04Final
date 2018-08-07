@@ -17,7 +17,7 @@ var error=0;
 function Level4() {
     this.kBg = "assets/typer.png";
     this.kLetter = "assets/letter.png";
-    this.win = "assets/Ending2.png";
+//    this.win = "assets/Ending2.png";
     // The camera to view the scene
     this.mCamera = null;
 
@@ -33,7 +33,7 @@ gEngine.Core.inheritPrototype(Level4, Scene);
 Level4.prototype.loadScene = function () {
     gEngine.Textures.loadTexture(this.kBg);
     gEngine.Textures.loadTexture(this.kLetter);
-    gEngine.Textures.loadTexture(this.win);
+//    gEngine.Textures.loadTexture(this.win);
 };
 
 Level4.prototype.unloadScene = function () {
@@ -41,10 +41,10 @@ Level4.prototype.unloadScene = function () {
     
     gEngine.Textures.unloadTexture(this.kBg);
     gEngine.Textures.unloadTexture(this.kLetter);
-    gEngine.Textures.unloadTexture(this.win);
+//    gEngine.Textures.unloadTexture(this.win);
     
     if(isWin === true) {
-        var nextLevel = new WinLevel();  // load the next level
+        var nextLevel = new WinLevel("assets/Ending2.png");  // load the next level
         gEngine.Core.startScene(nextLevel);
     }else if(isWin === false) {
         var nextLevel = new LoseLevel(4);  // load the next level
@@ -268,7 +268,7 @@ Level4.prototype.update = function () {
         }
     }
     
-    if(gEngine.Input.isKeyClicked(gEngine.Input.keys.Space)&&flag)
+    if(gEngine.Input.isKeyClicked(gEngine.Input.keys.Space))
     {
         isWin = true;
         gEngine.GameLoop.stop();

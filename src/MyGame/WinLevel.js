@@ -15,8 +15,8 @@ var offset = new Array();
 var id = 0;
 offset = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-function WinLevel() {
-    this.kBg = "assets/Ending2.png";
+function WinLevel(texture) {
+    this.kBg = texture;
     
     // The camera to view the scene
     this.mCamera = null;
@@ -35,8 +35,8 @@ WinLevel.prototype.unloadScene = function () {
     
     gEngine.Textures.unloadTexture(this.kBg);
     
-    /*var nextLevel = new Level3();  // next level to be loaded
-    gEngine.Core.startScene(nextLevel);*/
+    var nextLevel = new Level3();  // next level to be loaded
+    gEngine.Core.startScene(nextLevel);
 };
 
 WinLevel.prototype.initialize = function () {
